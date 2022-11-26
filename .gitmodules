@@ -1,0 +1,6 @@
+[submodule "api"]
+    path = api
+    url = https://github.com/rikito0000/udemy_myapp_api
+[submodule "front"]
+    path = front
+    url = https://github.com/rikito0000/udemy_myapp_front
