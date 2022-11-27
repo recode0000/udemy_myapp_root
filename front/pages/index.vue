@@ -1,5 +1,10 @@
 <template>
   <div>
+    <v-container>
+      <v-btn color="info">
+        Vuetifyテスト
+      </v-btn>
+    </v-container>
     <button
       type="button"
       name="button"
