@@ -18,7 +18,8 @@ services:
     command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     environment:
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      API_DOMAIN: 'localhost:$FRONT_PORT'
+      FRONT_DOMAIN: 'localhost:$FRONT_PORT'
+      MAILER_SENDER: $MAILER_SENDER
     stdin_open: true
     tty: true
     volumes:
@@ -34,6 +35,8 @@ services:
       args:
         WORKDIR: $WORKDIR
         API_URL: 'http://localhost:$API_PORT'
+    environment:
+      FRONT_BASE_URL: 'http://localhost:$FRONT_PORT'
     command: yarn run dev
     volumes:
       - ./front:/$WORKDIR
